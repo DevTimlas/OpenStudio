@@ -17,3 +17,5 @@ python-dotenv==1.0.0
 # HTTP client and async support
 httpx==0.25.2
 typing-extensions==4.8.0
+
+jinja2

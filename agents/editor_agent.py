@@ -57,7 +57,8 @@ Always provide specific, actionable feedback and explain the reasoning behind si
         """Process an editing request."""
         try:
             # Parse the request
-            edit_request = EditRequest(**request)
+            # edit_request = EditRequest(**request)
+            edit_request = request
             
             # Perform comprehensive editing
             edited_content = await self._edit_content(
@@ -95,7 +96,7 @@ Always provide specific, actionable feedback and explain the reasoning behind si
             return EditResponse(
                 success=False,
                 message=f"Error editing content: {str(e)}",
-                session_id=request.get("session_id")
+                session_id=request.session_id
             ).dict()
     
     async def _edit_content(self, content: str, focus_areas: List[str], preserve_style: bool) -> str:

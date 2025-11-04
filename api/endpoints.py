@@ -247,7 +247,7 @@ async def api_edit(request: Request):
             target_audience=data.get("target_audience", "general")
         )
         
-        result = await editor_agent.process_request(edit_request.content)
+        result = await editor_agent.process_request(edit_request)
         return {
             "success": True,
             "result": result,
